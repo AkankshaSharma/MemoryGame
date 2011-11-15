@@ -10,6 +10,8 @@
 
 @implementation ViewController
 
+@synthesize imageviews, topToolbar, bottomToolbar;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -22,6 +24,30 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    NSArray *cards = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"Card0.png"],
+                                                    [UIImage imageNamed:@"Card1.png"],
+                                                    [UIImage imageNamed:@"Card2.png"],
+                                                    [UIImage imageNamed:@"Card3.png"],
+                                                    [UIImage imageNamed:@"Card4.png"],
+                                                    [UIImage imageNamed:@"Card5.png"],
+                                                    [UIImage imageNamed:@"Card6.png"],
+                                                    [UIImage imageNamed:@"Card7.png"],
+                                                    [UIImage imageNamed:@"Card8.png"],
+                                                    [UIImage imageNamed:@"CardBack.png"],
+                      
+                                                        nil];
+    
+    for(int i = 0; i < 8; i++){
+    
+        [[imageviews objectAtIndex: i] setImage: [cards objectAtIndex:i]];
+        [[imageviews objectAtIndex: i+8] setImage: [cards objectAtIndex:i]];
+        
+    }
+    
+    
+    [bottomToolbar setTintColor:[[UIColor alloc] initWithRed:.1 green:1 blue:.1 alpha:1]];
 }
 
 - (void)viewDidUnload

@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (retain, nonatomic) IBOutletCollection(UIImageView) NSArray *imageviews;
+@property (retain) IBOutlet UINavigationBar *topToolbar;
+@property (retain) IBOutlet UINavigationBar *bottomToolbar;
+
 @end
